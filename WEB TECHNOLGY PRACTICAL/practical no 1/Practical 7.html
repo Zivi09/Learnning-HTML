@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of First n Numbers</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #333333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="number"] {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sum of First n Numbers</h1>
+      <input type="number" id="numberInput" placeholder="Enter a number" />
+      <button onclick="sumOfFirstNNumbers()">Calculate Sum</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function sumOfFirstNNumbers() {
+        var n = document.getElementById("numberInput").value;
+        n = parseInt(n);
+        if (isNaN(n) || n <= 0) {
+          alert("Please enter a valid positive number.");
+          return;
+        }
+        var sum = 0;
+        for (var i = 1; i <= n; i++) {
+          sum += i;
+        }
+        document.getElementById("result").innerText =
+          "The sum of the first " + n + " numbers is: " + sum;
+      }
+    </script>
+  </body>
+</html>

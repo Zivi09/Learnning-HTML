@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial Calculator</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #333333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="number"] {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Factorial Calculator</h1>
+      <input
+        type="number"
+        id="numberInput"
+        placeholder="Enter a number"
+        min="0"
+      />
+      <button onclick="calculateFactorial()">Calculate Factorial</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function calculateFactorial() {
+        var n = document.getElementById("numberInput").value;
+        n = parseInt(n);
+        if (isNaN(n) || n < 0) {
+          alert("Please enter a valid non-negative integer.");
+          return;
+        }
+        var factorial = 1;
+        for (var i = 1; i <= n; i++) {
+          factorial *= i;
+        }
+        document.getElementById("result").innerText =
+          "The factorial of " + n + " is: " + factorial;
+      }
+    </script>
+  </body>
+</html>
